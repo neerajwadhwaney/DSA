@@ -1,24 +1,32 @@
 package CodingNingaDSA.recursion;
 
 public class PairStar {
-    public static String pairStar(String input){
-        String ans="";
-        if(input.length() == 2){
-            if (input.charAt(0) == input.charAt(1)){
-                return input.replace(input.charAt(0)+"",input.charAt(0)+"*");
-            }
-            else
-                return input;
-        }
-        if (input.charAt(0) == input.charAt(1)){
-            ans = input.charAt(0)+"*"+input.charAt(1);
-        }
-        return ans+pairStar(input.substring(1,input.length()));
 
+
+    private static void addStars(StringBuilder sb, int idx,String str){
+
+
+        if(idx == str.length()-1){
+            sb.append(str.charAt(idx));
+            return;
+        }
+
+        //kaam
+        sb.append(str.charAt(idx));
+        if(str.charAt(idx)==str.charAt(idx + 1)){
+            sb.append("*");
+        }
+        addStars(sb, idx+1, str);
+    }
+    public static String addStars(String str){
+        StringBuilder sb = new StringBuilder();
+        addStars(sb,0,str);
+        return sb.toString();
     }
 
+
     public static void main(String[] args) {
-        String str = "hello";
-        System.out.println(str);
+        String str = "aaaa";
+        System.out.println(addStars(str));
     }
 }
