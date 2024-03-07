@@ -21,7 +21,7 @@ public class GatherRainWater {
     }
 
     public static void main(String[] args) {
-        int [] arr = {90,70,20,80,50};
+        int [] arr = {1,8,6,2,5,4,8,3,7};
         System.out.println(totalWater(arr));
     }
 }
