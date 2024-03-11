@@ -15,9 +15,10 @@ public class BasicSorting {
                     arr[j+1]=temp;
                     swaps++;
                 }
-                if(swaps==0){
-                    break;
-                }
+
+            }
+            if(swaps==0){
+                break;
             }
         }
         return arr;
