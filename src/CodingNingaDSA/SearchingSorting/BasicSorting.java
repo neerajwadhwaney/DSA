@@ -38,6 +38,19 @@ public class BasicSorting {
             arr[i] = temp;
         }
     }
+
+    public static void insertionSort(int[] arr){
+        //time complexity: O(n^2)
+        for(int i=1;i< arr.length;i++){
+            int curr=arr[i];
+            int prv=i-1;
+            while(prv>=0 && arr[prv]>curr){
+                arr[prv+1]=arr[prv];
+                prv--;
+            }
+            arr[prv+1]=curr;
+        }
+    }
     public static void printArr(int[] arr){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
@@ -47,7 +60,7 @@ public class BasicSorting {
 
     public static void main(String[] args) {
         int[] arr={5,4,1,3,2};
-        selectionSort(arr);
+        insertionSort(arr);
         printArr(arr);
     }
 }
